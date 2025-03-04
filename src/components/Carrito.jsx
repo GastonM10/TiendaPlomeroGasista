@@ -12,7 +12,7 @@ const Carrito = () => {
             {carrito.length > 0 ? (
                 <div className="row">
                     {/* Listado de productos en el carrito */}
-                    <div className="col-8 mt-4">
+                    <div className="col-12 col-lg-8 mt-4">
                         {carrito.map((prod) => (
                             <div key={prod.id} className="d-flex justify-content-center">
                                 <div className="card border-0 rounded mb-3 mb-lg-0 m-1 bg-white w-100">
@@ -24,7 +24,7 @@ const Carrito = () => {
                                                 </div>
                                                 <div className="ms-3 custom-width-350">
                                                     <h5>{prod.nombre}</h5>
-                                                    <p className="mb-0">{prod.descripcion}</p>
+                                                    <p className="mb-0 small">{prod.descripcion}</p>
                                                     <p className="small mb-0">Unidad $ {prod.precio.toLocaleString('es-AR')}</p>
                                                 </div>
                                             </div>
@@ -45,7 +45,7 @@ const Carrito = () => {
                     </div>
 
                     {/* Resumen del carrito fijo */}
-                    <div className="col-4 mt-4">
+                    <div className="col-12 col-lg-4 mt-4">
                         <div className="position-sticky bg-white p-3 m-1 rounded" style={{ top: '20px' }}>
                             <div className="border-bottom pb-2">
                                 <p className="fw-bold m-2">Resumen de compra</p>
@@ -68,14 +68,14 @@ const Carrito = () => {
             ) : (
 
                 <div className="d-flex row vh-100">
-                    <div className="col-8 mt-4">
+                    <div className="col-12 col-lg-8 mt-4">
                         <div className="pt-5 pb-5 d-flex row position-sticky bg-white p-3 m-1 rounded justify-content-center" style={{ top: '20px' }}>
                             <img style={{ width: '100px' }} src="../img/empty-cart.png" alt="Carrito vacío" />
                             <p className="fs-5 text-center pt-2">Agregá productos para armar tu carrito</p>
                             <button className="btn btn-purchase m-1 col-4 fw-bold text-white" onClick={() => navigate('/')}>Continuar comprando</button>
                         </div>
                     </div>
-                    <div className="col-4 mt-4 pb-5">
+                    <div className="col-12 col-lg-4 mt-4 pb-5">
                         <div className="position-sticky bg-white text-secondary p-3 m-1 rounded" style={{ top: '20px' }}>
                             <div className="border-bottom pb-2">
                                 <p className="fw-bold m-2">Resumen de compra</p>
