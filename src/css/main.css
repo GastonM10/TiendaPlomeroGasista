@@ -12,22 +12,23 @@
 }
 
 .header {
-    padding: .5rem;
+    /* padding: .5rem; */
 }
 
 .nav-menu {
-    display: flex;
-    list-style-type: none;
+    /* display: flex;
+    list-style-type: none; */
 }
 
 .nav-text-custom {
-    text-decoration: none;
-    color: white;
+    /* text-decoration: none;
+    color: white; */
 }
 
 .nav-text-custom:hover {
-    font-weight: bold ;
-    color: white;
+    /* font-weight: bold ;
+    color: white; 
+    border-bottom: 2px solid gray; */
 }
 
 .items-list-container, .item-detail {

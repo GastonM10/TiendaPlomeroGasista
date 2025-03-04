@@ -18,20 +18,18 @@ export const NavBar = () => {
   }, [])
 
   return (
-    <nav className="nav justify-content-center">
-        <ul className="nav-menu list-unstyled d-flex mb-1 text-decoration-none">
-            {
-              categories.map((category) => {
-                  return (
-                    <li className="nav-item" key={category.id}>
-                      <NavLink to={`/category/${category.id}`} className="nav-link nav-text-custom">
-                        {category.nombre}
-                      </NavLink>
-                    </li>
-                  )
-              })
-            }
+    <nav className="navbar navbar-expand-lg navbar-dark">
+      <div className="container">
+        <ul className="navbar-nav">
+          {categories.map((category) => (
+            <li className="nav-item" key={category.id}>
+              <NavLink to={`/category/${category.id}`} className="nav-link nav-text-custom">
+                {category.nombre}
+              </NavLink>
+            </li>
+          ))}
         </ul>
+      </div>
     </nav>
   )
 }
