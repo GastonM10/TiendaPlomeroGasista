@@ -11,7 +11,7 @@ export const Header = () => {
           <div className='d-flex row align-items-center'>
             <div className='d-flex align-items-center mb-1 mt-2'>
               <div className='col-3'>
-                <Link to="/" style={{ textDecoration: 'none' }}><img style={{width: '150px'}} src="/img/logo-nav-blanco.png"/></Link>
+                <Link to="/" style={{ textDecoration: 'none' }}><img style={{width: '150px'}} src="../img/logo-nav-blanco.png"/></Link>
               </div>
               <div className='col-6'>
                 <SearchProducts/>
