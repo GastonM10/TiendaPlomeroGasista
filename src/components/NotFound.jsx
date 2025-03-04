@@ -1,10 +1,9 @@
 import React from 'react'
-import backgroundImage from '../../public/img/404.png';
 
 const NotFound = () => {
 
     const divStyle = {
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: "url('/img/404.png')",
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       };

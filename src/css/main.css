@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Catamaran", sans-serif;
+    font-family: "Quicksand", sans-serif;
+}
+
+.body-color {
+    background-color: #ededed;
 }
 
 .header {
     padding: .5rem;
-}
-
-.header h1 {
-    color: greenyellow;
 }
 
 .nav-menu {
@@ -26,18 +26,19 @@
 }
 
 .nav-text-custom:hover {
-    color: greenyellow;
+    font-weight: bold ;
+    color: white;
 }
 
 .items-list-container, .item-detail {
     min-height: 50vh;
     display: grid;
     place-items: center;
-    margin-top: 80px;
+    margin-top: 1rem;
 }
 
 .text-footer {
-    color: greenyellow;
+    color: black;
 }
 
 .custom-width-80 {
@@ -57,5 +58,13 @@
 }
 
 .custom-height {
-    min-height: 470px;
+    min-height: 300px;
+}
+
+.btn-purchase {
+    background-color: grey;
+}
+
+.btn-purchase:hover {
+    background-color: grey;
 }

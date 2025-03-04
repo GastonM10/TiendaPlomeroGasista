@@ -19,10 +19,7 @@ export const NavBar = () => {
 
   return (
     <nav className="nav justify-content-center">
-        <ul className="nav-menu list-unstyled d-flex mb-0 text-decoration-none">
-            <li className="nav-item">
-              <NavLink to="/" className="nav-link nav-text-custom">Inicio</NavLink>
-            </li>
+        <ul className="nav-menu list-unstyled d-flex mb-1 text-decoration-none">
             {
               categories.map((category) => {
                   return (

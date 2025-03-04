@@ -3,6 +3,7 @@ import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import { Carousel } from './Carrousel'
 
 export const ItemListContainer = () => {
   
@@ -33,17 +34,20 @@ export const ItemListContainer = () => {
           setTitulo(res.docs[0].data().nombre);
         })
     } else {
-      setTitulo("Productos");
+      setTitulo("Todos nuestros productos");
     }
 
   }, [categoryId]);
 
   return (
-    <div className="items-list-container">
-      <h1 className="display-4 fw-normal pb-3">{titulo}</h1>
-      <div className="container">
-        <div className="row">
+    <div className=''>
+      <Carousel/>
+      <div className="items-list-container">
+        <h1 className="fw-normal pb-2">{titulo}</h1>
+        <div className="container">
+          <div className="row">
             <ItemList productos={productos} />
+          </div>
         </div>
       </div>
     </div>

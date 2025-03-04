@@ -5,16 +5,17 @@ import { ItemCount } from './ItemCount';
 
 export const Item = ( { producto } ) => {
 
-    const {addToCart} = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     const [cantidad, setCantidad] = useState(1);
 
     const handleRestar = () => {
-        cantidad > 1 && setCantidad(cantidad - 1)
+        cantidad > 1 && setCantidad(cantidad - 1);
     };
 
     const handleSumar = () => {
-        setCantidad(cantidad + 1);
-        
+        if (cantidad < producto.stock) {
+            setCantidad(cantidad + 1);
+        }
     };
 
     const handleAgregar = () => {
@@ -34,20 +35,30 @@ export const Item = ( { producto } ) => {
     };
   
     return (
-        <div className="col-4 mb-3 w-25">
+        <div className="col-12 col-sm-3 mb-3 item-style">
             <div className="producto">
-                <div className="card text-bg-success custom-card-height">
-                    <img src={producto.imagen} className="rounded-top" />
-                    <div className="card-header fs-5 text-center">{producto.nombre}</div>
-                    <Link to={`/item/${producto.id}`} className="btn btn-secondary">Más info</Link>
+                <div className="card border-0 ">
+                    <Link to={`/item/${producto.id}`}>
+                        <img src={producto.imagen} className="rounded-top w-100" />
+                    </Link>
                     <div className="card-body">
-                        <h5 className="text-center card-title fw-bold">$ {producto.precio}</h5>
-                        <ItemCount
-                            cantidad={cantidad}
-                            handleSumar={handleSumar}
-                            handleRestar={handleRestar}
-                            handleAgregar={handleAgregar}
-                        />
+                        <Link to={`/item/${producto.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <div className="card-description">{producto.descripcion}</div>
+                            <div className="fw-bold fs-3">$ {producto.precio.toLocaleString('es-AR')}</div>
+                        </Link>
+                        {producto.stock > 0 ? (
+                            <>
+                                <div className="small">Disponible: {producto.stock} u.</div>
+                                <ItemCount
+                                    cantidad={cantidad}
+                                    handleSumar={handleSumar}
+                                    handleRestar={handleRestar}
+                                    handleAgregar={handleAgregar}
+                                />
+                            </>
+                        ) : (
+                            <div className="d-flex justify-content-start align-items-center card-description-nostock text-secondary fw-bold">No hay stock</div>
+                        )}
                     </div>
                 </div>
             </div>
