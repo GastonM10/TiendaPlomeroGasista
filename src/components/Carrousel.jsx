@@ -8,13 +8,13 @@ export const Carousel = () => {
   
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="../public/img/carousel1.jpg" className="d-block w-100" alt="Casa Contenedor 1" />
+                    <img src="../img/carousel1.jpg" className="d-block w-100" alt="Casa Contenedor 1" />
                 </div>
                 <div className="carousel-item">
-                    <img src="../public/img/carousel2.jpg" className="d-block w-100" alt="Casa Contenedor 2" />
+                    <img src="../img/carousel2.jpg" className="d-block w-100" alt="Casa Contenedor 2" />
                 </div>
                 <div className="carousel-item">
-                    <img src="../public/img/carousel3.jpg" className="d-block w-100" alt="Casa Contenedor 3" />
+                    <img src="../img/carousel3.jpg" className="d-block w-100" alt="Casa Contenedor 3" />
                 </div>
             </div>  
     
