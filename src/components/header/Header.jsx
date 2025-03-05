@@ -2,8 +2,14 @@ import { NavBar } from './NavBar'
 import { CartWidget } from './CartWidget'
 import { Link } from 'react-router-dom'
 import { SearchProducts } from './SearchProducts'
+import { useState } from "react";
 
 export const Header = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Función para cerrar el menú al hacer clic en una opción
+  const closeMenu = () => setMenuOpen(false);
   
   return (
     <header className="header bg-black fixed-top mb-5">
@@ -29,10 +35,8 @@ export const Header = () => {
           <button
             className="navbar-toggler d-lg-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
             aria-label="Toggle navigation"
           >
             <i className="bi bi-list text-white fs-2"></i>
@@ -51,8 +55,8 @@ export const Header = () => {
 
         {/* Menú de navegación (Siempre visible en PC, desplegable en móviles) */}
         <nav className="navbar navbar-expand-lg navbar-dark">
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <NavBar />
+          <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`} id="navbarNav">
+            <NavBar closeMenu={closeMenu} />
           </div>
         </nav>
       </div>
