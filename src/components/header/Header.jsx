@@ -2,14 +2,25 @@ import { NavBar } from './NavBar'
 import { CartWidget } from './CartWidget'
 import { Link } from 'react-router-dom'
 import { SearchProducts } from './SearchProducts'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Función para cerrar el menú al hacer clic en una opción
+  // Cierra el menú al hacer clic en una opción
   const closeMenu = () => setMenuOpen(false);
+
+   // Cierra el menú si se hace clic fuera de él
+   useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!event.target.closest(".navbar") && menuOpen) {
+        closeMenu();
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [menuOpen]);
   
   return (
     <header className="header bg-black fixed-top mb-5">
