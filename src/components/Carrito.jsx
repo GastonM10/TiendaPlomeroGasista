@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { EmptyCart } from './EmptyCart';
 
 const Carrito = () => {
     const { calcCant, carrito, calcTot, deleteProduct, emptyCart } = useContext(CartContext);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <div className="container mt-5 pt-5 custom-height vh-100">
@@ -67,7 +67,8 @@ const Carrito = () => {
                 </div>
             ) : (
                 <EmptyCart/>
-            )}
+                )
+            }
         </div>
     );
 };

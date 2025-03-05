@@ -35,7 +35,7 @@ export const Item = ( { producto } ) => {
     };
   
     return (
-        <div className="col-12 col-sm-3 mb-3 item-style">
+        <div className="col-6 col-sm-4 col-lg-3 mb-3 item-style">
             <div className="producto">
                 <div className="card border-0 ">
                     <Link to={`/item/${producto.id}`}>
@@ -43,7 +43,7 @@ export const Item = ( { producto } ) => {
                     </Link>
                     <div className="card-body">
                         <Link to={`/item/${producto.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <div className="card-description">{producto.descripcion}</div>
+                            <div className="">{producto.descripcion}</div>
                             <div className="fw-bold fs-3">$ {producto.precio.toLocaleString('es-AR')}</div>
                         </Link>
                         {producto.stock > 0 ? (
