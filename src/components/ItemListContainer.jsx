@@ -40,32 +40,21 @@ export const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <div className=''>
-      <>
-      {titulo === 'Todos nuestros productos' ? (
-        <><Carousel/> 
-        <div className="items-list-container">
-          <h1 className="fw-normal pb-2">{titulo}</h1>
-          <div className="container">
-            <div className="row">
-              <ItemList productos={productos} />
-            </div>
+    <div>
+
+      {/* Se muestra el carrousel solo en la página principal */}
+      {titulo === 'Todos nuestros productos' && <Carousel />} 
+  
+      <div className={`items-list-container ${titulo !== 'Todos nuestros productos' ? 'pt-5 mt-5' : ''}`}>
+        <h1 className={`fw-normal pb-2 ${titulo !== 'Todos nuestros productos' ? 'mt-4 pt-4' : ''}`}>{titulo}</h1>
+        <div className="container">
+          <div className="row">
+            <ItemList productos={productos} />
           </div>
         </div>
-        </>
-      ) : ( 
-        <div className="items-list-container pt-5 mt-5">
-          <h1 className="fw-normal pb-2 mt-4 pt-4">{titulo}</h1>
-          <div className="container">
-            <div className="row">
-              <ItemList productos={productos} />
-            </div>
-          </div>
-        </div>
-       ) }
-       </>
+      </div>
     </div>
-  )
+  );
   
 }
 

@@ -21,7 +21,9 @@ export const Header = () => {
           </div>
 
           {/* Carrito */}
-          <CartWidget />
+          <div className="d-none d-lg-block">
+            <CartWidget />
+          </div>
 
           {/* Icono Menú (Solo en móviles) */}
           <button
@@ -38,8 +40,13 @@ export const Header = () => {
         </div>
 
         {/* Barra de búsqueda (visible en -992px) */}
-        <div className="d-lg-none mt-2">
-          <SearchProducts />
+        <div className="d-lg-none mt-2 d-flex row align-items-center">
+          <div className='col-10'>
+            <SearchProducts />
+          </div>
+          <div className='col-2 text-end'>
+            <CartWidget />
+          </div>
         </div>
 
         {/* Menú de navegación (Siempre visible en PC, desplegable en móviles) */}
