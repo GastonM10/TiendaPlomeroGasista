@@ -3,12 +3,14 @@ import { CartContext } from '../context/CartContext'
 import { useForm } from 'react-hook-form';
 import { collection, addDoc, Timestamp, doc, getDoc, writeBatch } from "firebase/firestore";
 import { db } from "../firebase/config";
+import { useNavigate } from 'react-router-dom';
 
 export const Checkout = () => {
 
     const { carrito, calcCant, calcTot, emptyCartCheckout } = useContext(CartContext);
     const { register, handleSubmit } = useForm();
     let [docId, setDocId] = useState("");
+    const navigate = useNavigate();
 
     const comprar = async (data) => {
 
