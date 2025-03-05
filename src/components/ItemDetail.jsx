@@ -35,28 +35,34 @@ export const ItemDetail = ({ producto }) => {
     };
 
     return (
-        <div className='container pt-5 w-50 custom-height'>
-            <div className="card mt-5 text-bg-secondary">
-                <div className="row g-0">
-                    <div className="col-md-4 d-flex align-items-center p-1">
-                        <a href={producto.imagen}><img src={producto.imagen} className="img-fluid rounded" alt={producto.nombre} /></a>
-                    </div>
-                    <div className="col-md-8 d-flex align-items-center">
-                        <div className="card-body">
-                            <h5 className="card-title fs-2 fw-normal">{producto.nombre}</h5>
-                            <p className="card-text fs-4 fw-normal">{producto.descripcion}</p>
-                            <p className="card-text fs-2 fw-normal">$ {producto.precio.toLocaleString('es-AR')}</p>
-                            <p className="card-text fs-5 fw-normal">Stock disponible: {producto.stock}</p>
-                            <ItemCount
-                                cantidad={cantidad}
-                                handleSumar={handleSumar}
-                                handleRestar={handleRestar}
-                                handleAgregar={handleAgregar}
-                            />
-                        </div>
-                    </div>
+        <div className="container pt-5 mt-5 col-10 col-sm-6 col-lg-10">
+    <div className="card mt-5">
+        <div className="row g-0 flex-column flex-lg-row">
+            {/* Imagen - Ocupa 50% en pantallas grandes, 100% en chicas */}
+            <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center p-3">
+                <a href={producto.imagen}>
+                    <img src={producto.imagen} className="img-fluid rounded w-100" alt={producto.nombre} />
+                </a>
+            </div>
+
+            {/* Texto - Ocupa 50% en pantallas grandes, 100% en chicas */}
+            <div className="col-12 col-lg-6 d-flex align-items-center">
+                <div className="card-body text-lg-start">
+                    <h5 className="card-title fs-2 fw-bold">{producto.nombre}</h5>
+                    <p className="card-text fs-4 fw-normal">{producto.descripcion}</p>
+                    <p className="card-text fs-2 fw-bold">$ {producto.precio.toLocaleString('es-AR')}</p>
+                    <p className="card-text fs-5 fw-normal">Stock disponible: {producto.stock}</p>
+                    <ItemCount
+                        cantidad={cantidad}
+                        handleSumar={handleSumar}
+                        handleRestar={handleRestar}
+                        handleAgregar={handleAgregar}
+                    />
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
     );
 };

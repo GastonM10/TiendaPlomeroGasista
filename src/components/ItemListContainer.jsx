@@ -46,9 +46,9 @@ export const ItemListContainer = () => {
       {titulo === 'Todos nuestros productos' && <Carousel />} 
   
       <div className={`items-list-container ${titulo !== 'Todos nuestros productos' ? 'pt-5 mt-5' : ''}`}>
-        <h1 className={`fw-normal pb-2 ${titulo !== 'Todos nuestros productos' ? 'mt-4 pt-4' : ''}`}>{titulo}</h1>
+        <h1 className={`pt-3 mt-3 text-center fw-normal pb-2 ${titulo !== 'Todos nuestros productos' ? 'mt-4 pt-4' : ''}`}>{titulo}</h1>
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
             <ItemList productos={productos} />
           </div>
         </div>

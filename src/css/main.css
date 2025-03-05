@@ -26,23 +26,23 @@
 }
 
 .nav-text-custom:hover {
-    /* font-weight: bold ;
-    color: white; 
-    border-bottom: 2px solid gray; */
+    font-weight: bold ;
+     color: white; 
+    /* border-bottom: 2px solid gray; */
 }
 
 .items-list-container, .item-detail {
-    min-height: 50vh;
+    /* min-height: 50vh;
     display: grid;
     place-items: center;
-    margin-top: 1rem;
+    margin-top: 1rem; */
 }
 
 .text-footer {
     color: black;
 }
 
-.custom-width-80 {
+/* .custom-width-80 {
     width: 80px;
 }
 
@@ -60,7 +60,7 @@
 
 .custom-height {
     min-height: 300px;
-}
+} */
 
 .btn-purchase {
     background-color: grey;
